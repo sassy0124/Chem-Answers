@@ -8,28 +8,23 @@
         <title>Chem Answers</title>
     </head>
     <body>
-        <h1>質問投稿</h1>
-        <form action="/questions" method="POST">
+        <h1>質問検索</h1>
+        <form action="/questions/index/searched" method="GET">
             @csrf
             
             <div class="body">
-                <div class='question'>    
-                    <h2>質問内容</h2>
-                    <textarea name="question[body]" placeholder="質問を入力してください">{{ old('question.body') }}</textarea>
-                    <p class="body__error" style="color:red">{{ $errors->first('question.body') }}</p>
-                </div>
                 <div class='category'>
                     <h3>分野選択</h3>
-                    <select name="question[category_id]">
+                    <select name="categoryId">
                         @foreach($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
                     </select>
                 </div>
             </div>
-            <input type="submit" value="投稿する"/>
+            <input type="submit" value="絞り込み"/>
         </form>
-        <div class="back"><a href="/questions">[質問一覧へ]</a></div>
+        <div class="back">[<a href="/questions">質問一覧へ</a>]</div>
     </body>
 </html>
 @endsection
