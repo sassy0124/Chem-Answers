@@ -10,16 +10,9 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>Chem Answers</h1>
-        <div class='header'>
-            <div clas="transition">
-                <a href='user'>マイページ</a>
-                <a href='questions/search'>質問を絞り込む</a>
-            </div>
-        </div>
-        <div class='questions'>
-            <h2>質問一覧</h2>
-            @foreach ($questions as $question)
+        <div class="questionTable">
+            <p>全{{ $questions->count() }}件</p>
+            @foreach($questions as $question)
                 <div class='question'>
                     <h3 class='questioner'>{{ $question->user->name }}さん</h3>
                     <p class='body_header'>質問内容</p>
@@ -28,9 +21,16 @@
                 </div>
             @endforeach
         </div>
+    <!--テーブルここまで-->
+    <!--ページネーション-->
         <div class='paginate'>
             {{ $questions->links() }}
         </div>
+    <!--ページネーションここまで-->
     </body>
+    <div class="footer">
+        <a href="/questions">質問一覧へ</a>
+        <a href='/questions/search'>質問を絞り込む</a>
+    <div>
 </html>
 @endsection

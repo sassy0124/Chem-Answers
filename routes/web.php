@@ -12,6 +12,8 @@
 */
 
 Route::get('/questions', 'QuestionController@index');
+Route::get('/questions/search', 'QuestionController@search');
+Route::get('/questions/index/searched', 'QuestionController@searched');
 Route::get('/questions/create', 'QuestionController@create');
 Route::get('/questions/{question}', 'QuestionController@show');
 Route::get('/questions/{question}/user', 'QuestionController@detail');

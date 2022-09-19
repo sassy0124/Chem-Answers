@@ -15,6 +15,34 @@ class QuestionController extends Controller
         return view('questions/index')->with(['questions' => $question->getPaginateByLimit()]);
     }
     
+    public function search(Category $category)
+    {
+        return view('questions/search')->with(['categories' => $category->get()]);
+    }
+    
+    public function searched(Request $request)
+    {
+        //入力される値nameの中身を定義する
+        $categoryId = $request->input('categoryId'); //カテゴリの値
+        
+        $query = Question::query();
+        //categoriesテーブルからcategory_idが一致する商品を$queryに代入
+        $query->where('category_id', $categoryId);
+
+        //$queryをcategory_idを降順に並び替えて$questionsに代入
+        $questions = $query->orderBy('id', 'DESC')->paginate(10);
+
+        //categoriesテーブルからgetLists();関数でnameとidを取得する
+        $category = new Category;
+        $categories = $category->getLists();
+
+        return view('questions/searched', [
+            'questions' => $questions,
+            'categories' => $categories,
+            'category_id' => $categoryId
+        ]);
+    }
+    
     public function create(Category $category)
     {
         return view('questions/create')->with(['categories' => $category->get()]);
