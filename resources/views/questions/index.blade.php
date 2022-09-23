@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class='questions'>
-                <h2>質問一覧</h2>
+                <h2 class='index_title'>質問一覧</h2>
                 @foreach ($questions as $question)
                     <div class='question'>
                         <h3 class='questioner'>{{ $question->user->name }}さん</h3>
