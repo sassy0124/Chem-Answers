@@ -10,12 +10,11 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>Chem Answers</h1>
         <h2>{{ Auth::user()->name }}さんの質問一覧</h2>
         <div class='own_questions'>
             @foreach ($own_questions as $question)
                 <div class='question'>
-                    <p class='body_header'>質問内容</p>
+                    <p class='question_category'>分野：{{ $question->category->name }}</p>
                     <p class='body'>{{ $question->body }}</p>
                     <a href="/questions/{{ $question->id }}/user">この質問の詳細へ</a>
                 </div>

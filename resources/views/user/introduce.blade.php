@@ -10,11 +10,20 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>Chem Answers</h1>
         <h2>{{ Auth::user()->name }}さん</h2>
         <div class=profile>
-            <h3>プロフィール</h3>
-            <p>職業：{{ Auth::user()->occupation->name }}</p>
+            <h4 class='profile_title'>プロフィール</h4>
+            <p>
+                職業：
+                @if(Auth::user()->occupation_id == 4)
+                    <i class="fa-solid fa-user-graduate"></i>
+                @elseif(Auth::user()->occupation_id == 5)
+                    <i class="fa-solid fa-user-tie"></i>
+                @elseif(Auth::user()->occupation_id == 6)
+                    <i class="fa-solid fa-user"></i>
+                @endif
+                {{ Auth::user()->occupation->name }}
+            </p>
             <p>専攻：{{ Auth::user()->major->name }}</p>
         </div>
         <div class=create_question>
