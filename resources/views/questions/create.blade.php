@@ -8,13 +8,12 @@
         <title>Chem Answers</title>
     </head>
     <body>
-        <h1>質問投稿</h1>
+        <h2>質問投稿</h2>
         <form action="/questions" method="POST">
             @csrf
             
             <div class="body">
-                <div class='question'>    
-                    <h2>質問内容</h2>
+                <div class='question_create'>
                     <textarea name="question[body]" placeholder="質問を入力してください">{{ old('question.body') }}</textarea>
                     <p class="body__error" style="color:red">{{ $errors->first('question.body') }}</p>
                 </div>
@@ -29,7 +28,7 @@
             </div>
             <input type="submit" value="投稿する"/>
         </form>
-        <div class="back"><a href="/questions">[質問一覧へ]</a></div>
+        <div class="back"><a href="/questions">質問一覧へ</a></div>
     </body>
 </html>
 @endsection

@@ -2,73 +2,80 @@
 
 body{
     color: black;
+    width: 70%;
+    margin: 0 auto;
+    font-size: 1.0rem;
 }
 
 li{
     list-style: none;
 }
 
-.body_content{
-    width: 70%;
+textarea{
+    height: 200px;
+    width: 100%;
     margin: 0 auto;
-    font-size: 1rem;
 }
 
-.question{
-    border: 2px solid;
-    margin: 10px 2px;
-    border-color: black;
+.footer li{
+    line-height: 30px;
+}
+
+.adding_color_1{
+    color: #3366FF;
+}
+
+.nav-item{
+    font-size: 1.0rem;
+}
+
+.navbar-brand{
+    font-size: 1.2rem;
 }
 
 .header{
     float: right;
 }
 
+.index_title{
+  /*線の種類（二重線）太さ 色*/
+  border-bottom: double 5px #99CCFF;
+}
+
+.index_question{
+    border: 2px solid;
+    margin: 10px 2px;
+    border-color: black;
+    border-radius: 0.5em;/*角丸*/
+    padding: 10px 15px 35px 15px;
+}
+
+.answer, .question{
+    border: 2px solid;
+    margin: 10px 2px;
+    border-color: black;
+    border-radius: 0.5em;/*角丸*/
+    padding: 15px;
+}
+
+.profile{
+    margin: 10px 500px 10px 2px;
+    padding: 15px;
+}
+
+.comment{
+    padding-top: 20px;
+    padding-left: 15px;
+}
+
 .questions{
     margin-top: 50px;
 }
 
-.nav-item{
-    font-size: 1.5rem;
-}
-
-h2 {
-  padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
-  color: #494949;/*文字色*/
-  background: #f4f4f4;/*背景色*/
-  border-left: solid 5px #7db4e6;/*左線*/
-  border-bottom: solid 3px #d7d7d7;/*下線*/
-}
-
-
-
-
-
-
-
-/*.container{
-    position: fixed;
-    top: 0px;
-    z-index: 10;
-    width: 70%;
-    line-height: 100px;
-    background-color: #EEEEEE;
-    clear: both;
-}
-
-.navbar-brand{
-    font-size: 20px;
-    float: left;
-    margin-left: 10px;
-}
-
-.navbar-nav{
+.to_show{
     float: right;
-    margin-top: 0px ;
 }
 
-.navbar-nav li{
-    float: left;
-    margin: 0px 10px;
-}*/
-
+.profile_title{
+    border-bottom: double 5px #99CCFF;
+}
