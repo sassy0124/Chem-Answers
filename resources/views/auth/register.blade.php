@@ -63,9 +63,9 @@
 
                             <div class="col-md-6">
                                 <select id="occupation_id" class="form-control @error('occupation_id') is-invalid @enderror" name="occupation_id" value="{{ old('occupation_id') }}">
-                                    <option value="4">教員</option>
-                                    <option value="5">学生</option>
-                                    <option value="6">その他</option>
+                                    <option value="1">教員</option>
+                                    <option value="2">学生</option>
+                                    <option value="3">その他</option>
                                 </select>
                                 
                                 @error('occupation_id')
@@ -84,9 +84,9 @@
                                     <option value="1">有機化学</option>
                                     <option value="2">無機化学</option>
                                     <option value="3">物理化学</option>
-                                    <option value="4">生化学</option>
-                                    <option value="5">分析化学</option>
-                                    <option value="6">高分子化学</option>
+                                    <option value="4">分析化学</option>
+                                    <option value="5">生物化学</option>
+                                    <option value="6">その他</option>
                                 </select>
 
                                 @error('major_id')
