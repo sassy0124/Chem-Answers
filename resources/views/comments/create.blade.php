@@ -8,23 +8,26 @@
         <title>Chem Answers</title>
     </head>
     <body>
-        <h1>コメント投稿</h1>
+        <h2>コメント投稿</h2>
         <form action="/comments" method="POST">
             @csrf
             
             <div class="body">
-                <div class="answer_id">
-                    <input value="{{ $answer->id }}" type="hidden" name="comment[answer_id]" />
-                </div>
-                <div class="comment">
-                    <h2>コメント内容</h2>
-                    <textarea name="comment[body]" placeholder="コメントを入力してください">{{ old('comment.body') }}</textarea>
-                    <p class="body__error" style="color:red">{{ $errors->first('comment.body') }}</p>
+                <div class="comment_create">
+                    <div class="answer_id">
+                        <input value="{{ $answer->id }}" type="hidden" name="comment[answer_id]" />
+                    </div>
+                    <div>
+                        <textarea name="comment[body]" placeholder="コメントを入力してください">{{ old('comment.body') }}</textarea>
+                        <p class="body__error" style="color:red">{{ $errors->first('comment.body') }}</p>
+                    </div>
                 </div>
             </div>
-            <input type="submit" value="保存"/>
+            <input type="submit" value="投稿する"/>
         </form>
-        <div class="back">[<a href="/questions">質問一覧へ</a>]</div>
+        <div class="footer">
+            <a href="/questions">質問一覧</a>
+        </div>
     </body>
 </html>
 @endsection

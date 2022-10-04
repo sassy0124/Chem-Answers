@@ -24,7 +24,9 @@
             </div>
             <input type="submit" value="絞り込み"/>
         </form>
-        <div class="back">[<a href="/questions">質問一覧へ</a>]</div>
+        <div class="footer">
+            <a href="/questions">質問一覧</a>
+        </div>
     </body>
 </html>
 @endsection
