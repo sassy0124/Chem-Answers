@@ -21,7 +21,7 @@
                     <input type="submit" value="保存する">
                 </form>
                 <div class="footer">
-                    [<a href="/questions/{{ $question->id }}/user">戻る</a>
+                    [<a href="/questions/{{ $question->id }}/user">戻る</a>]
                 </div>
             </div>
         </div>
