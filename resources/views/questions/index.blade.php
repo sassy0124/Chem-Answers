@@ -17,7 +17,7 @@
                     <li>Chem Answersは<span class='adding_color_1'>化学</span>に関する質問を共有し合うサイトです。実験や勉強中に疑問に感じたことをみんなで解決しましょう！</li>
                     <li>・質問する：ログイン➝(右上のユーザータグから)マイページ➝質問を投稿する</li>
                     <li>・回答する：ログイン➝この質問の詳細へ➝この質問に回答する</li>
-                    <li>・アイコン説明　教授：<i class="fa-solid fa-user-graduate"></i>　学生：<i class="fa-solid fa-user-tie"></i>　その他：<i class="fa-solid fa-user"></i></li>
+                    <li>・アイコン説明　教員：<i class="fa-solid fa-user-graduate"></i>　学生：<i class="fa-solid fa-user-tie"></i>　その他：<i class="fa-solid fa-user"></i></li>
                 </ul>
             </div>
             <div class='header'>
@@ -30,11 +30,11 @@
                 @foreach ($questions as $question)
                     <div class='index_question'>
                         <h3 class='questioner'>
-                            @if($question->user->occupation_id == 4)
+                            @if($question->user->occupation_id == 1)
                                 <i class="fa-solid fa-user-graduate"></i>
-                            @elseif($question->user->occupation_id == 5)
+                            @elseif($question->user->occupation_id == 2)
                                 <i class="fa-solid fa-user-tie"></i>
-                            @elseif($question->user->occupation_id == 6)
+                            @elseif($question->user->occupation_id == 3)
                                 <i class="fa-solid fa-user"></i>
                             @endif
                             {{ $question->user->name }}さん

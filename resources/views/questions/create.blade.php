@@ -28,7 +28,12 @@
             </div>
             <input type="submit" value="投稿する"/>
         </form>
-        <div class="back"><a href="/questions">質問一覧へ</a></div>
+        <div class="footer">
+            <ul>
+                <li><a href="/user">マイページ</a></li>
+                <li><a href="/questions">質問一覧</a></li>
+            </ul>
+        </div>
     </body>
 </html>
 @endsection

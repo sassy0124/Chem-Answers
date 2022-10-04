@@ -9,18 +9,21 @@
     </head>
     <!-- body内だけを表示しています。 -->
     <body>
-        <h1 class="title">質問編集</h1>
-        <div class="content">
-            <form action="/questions/{{ $question->id }}" method="POST">
-                @csrf
-                @method('PUT')
-                <div class='content__body'>
-                    <h2>質問内容</h2>
-                    <input type='text' name='question[body]' value="{{ $question->body }}">
+        <div class='body_content'>
+            <h2>質問編集</h2>
+            <div class="content">
+                <form action="/questions/{{ $question->id }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <div class='edit_question'>
+                        <textarea name='question[body]'>{{ $question->body }}</textarea>
+                    </div>
+                    <input type="submit" value="保存する">
+                </form>
+                <div class="footer">
+                    [<a href="/questions/{{ $question->id }}/user">戻る</a>
                 </div>
-                <input type="submit" value="保存">
-            </form>
-            <div class="back">[<a href="/questions/{{ $question->id }}/user">戻る</a>]</div>
+            </div>
         </div>
     </body>
 </html>

@@ -10,14 +10,28 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <div class="questionTable">
-            <p>全{{ $questions->count() }}件</p>
+        <div class="questions">
+            <h4>全{{ $questions->count() }}件あります</h4>
             @foreach($questions as $question)
-                <div class='question'>
-                    <h3 class='questioner'>{{ $question->user->name }}さん</h3>
-                    <p class='body_header'>質問内容</p>
-                    <p class='body'>{{ $question->body }}</p>
-                    <a href="/questions/{{ $question->id }}">この質問の詳細へ</a>
+                <div class='index_question'>
+                    <h3 class='questioner'>
+                        @if($question->user->occupation_id == 1)
+                            <i class="fa-solid fa-user-graduate"></i>
+                        @elseif($question->user->occupation_id == 2)
+                            <i class="fa-solid fa-user-tie"></i>
+                        @elseif($question->user->occupation_id == 3)
+                            <i class="fa-solid fa-user"></i>
+                        @endif
+                        {{ $question->user->name }}さん
+                    </h3>
+                    <p class='question_category'>分野：{{ $question->category->name }}</p>
+                    <p class='question_body'>{{ $question->body }}</p>
+                    @if ($question->answers->count() == 0)
+                        <p class='count_answer'>まだ回答がありません</p>
+                    @else
+                        <p class='count_answer'>{{ $question->answers->count() }}件の回答があります</p>
+                    @endif
+                    <a class='to_show' href="/questions/{{ $question->id }}">この質問の詳細へ</a>
                 </div>
             @endforeach
         </div>
@@ -29,8 +43,10 @@
     <!--ページネーションここまで-->
     </body>
     <div class="footer">
-        <a href="/questions">質問一覧へ</a>
-        <a href='/questions/search'>質問を絞り込む</a>
-    <div>
+        <ul>
+            <li><a href="/questions">質問一覧</a></li>
+            <li><a href='/questions/search'>質問を絞り込む</a></li>
+        </ul>
+    </div>
 </html>
 @endsection
