@@ -14,7 +14,7 @@ class AddPointToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->bigInteger('point')->unsigned()->after('major_id');
+            $table->bigInteger('point')->unsigned()->default('0')->after('major_id');
             //
         });
     }
